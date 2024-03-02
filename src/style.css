@@ -50,21 +50,22 @@ body {
 }
 
 .nav {
-    list-style-type: none;
+    
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-self: center;
 }
 
-.nav > li {
+li {
+    list-style-type: none;
     font-size: 2rem;
     color: cadetblue;
     font-weight: 600;
     /* text-shadow: 1px 1px 1px rgba(0, 0, 0, .5); */
 }
 
-.nav > li:hover {
+li:hover {
     content: "#";
     color: rgb(65, 111, 112);
     cursor: pointer;
@@ -160,3 +161,475 @@ body {
     background-color: cadetblue;
 }
 
+.overlay-new {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    backdrop-filter: blur(10px);
+}
+
+.invisible {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.create-new {
+    position: relative;
+    background-color: aliceblue;
+    border-radius: 5px;
+    height: 30rem;
+    width: 60rem;
+}
+
+.create-new-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    background-color: cadetblue;
+    color: aliceblue;
+}
+
+.create-new-title {
+    margin-left: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.create-new-close {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.create-new-close:hover {
+    font-size: 2rem;
+}
+
+.create-new-content {
+    display: flex;
+    height: calc(100% - 4rem);
+}
+
+.create-new-sidebar {
+    width: 10rem;
+    padding: 1rem;
+    background-color: #eee;
+}
+
+.create-new-options {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding-left: .5rem;
+    padding-top: 1rem;
+}
+
+.create-new-options > li {
+    padding-top: 1rem;
+}
+
+.create-new-entry {
+    display: none;
+    flex: 1;
+    padding: 2rem;
+    flex-direction: column;
+}
+
+.create-new-input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 1.4rem;
+    resize: none;
+}
+
+.create-new-input:focus {
+    outline: none !important;
+}
+
+.create-new-detail {
+    height: 12rem;
+    margin-bottom: auto;
+    font-size: 1.4reem;
+}
+
+.create-new-date {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.create-new-date > label {
+    margin-right: 1rem;
+}
+
+#new-todo-date {
+    padding: .5rem 1rem;
+    border: 1px solid cadetblue;
+    border-radius: 5px;
+    color: cadetblue;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.create-new-priority-submit-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.create-new-priority {
+    display: flex;
+    align-items: center;
+}
+
+.create-new-priority > label {
+    margin-right: 2.6rem;
+}
+
+.create-new-priority > input {
+    position: relative;
+    opacity: 0;
+    left: 2.2rem;
+}
+
+.create-new-btn {
+    display: inline-block;
+    margin: 0 1.5rem 0 -5px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+} 
+
+.btn-green {
+    border: 1px solid green;
+    color: green;
+}
+
+.btn-green:hover {
+    background-color: green;
+    color: aliceblue;
+}
+
+.btn-yellow {
+    border: 1px solid orange;
+    color: orange;
+}
+
+.btn-yellow:hover {
+    background-color: orange;
+    color: aliceblue;
+}
+
+.btn-red {
+    border: 1px solid red;
+    color: red;
+}
+
+.btn-red:hover {
+    background-color: red;
+    color: aliceblue;
+}
+
+#todo-submit {
+    text-align: center;
+    align-self: center;
+    padding: 0.5rem 1rem;
+    border: 1px solid cadetblue;
+    border-radius: 5px;
+    background-color: transparent;
+    color: cadetblue;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#todo-submit:hover {
+    background-color: cadetblue;
+    color: aliceblue;
+}
+
+.create-new-project {
+    display: none;
+    flex: 1;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.create-new-project-input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 1.4rem;
+    resize: none;
+}
+
+.create-new-project-input:focus {
+    outline: none !important;
+}
+
+.create-new-project-submit {
+    text-align: center;
+    padding: .5rem 1rem;
+    border: 1px solid cadetblue;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: cadetblue;
+    background-color: transparent;
+    cursor: pointer;
+    align-self: self-start;
+}
+
+.create-new-project-submit:hover {
+    background-color: cadetblue;
+    color: aliceblue;
+}
+
+.create-new-note {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.create-new-note-input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 1.4rem;
+    resize: none;
+}
+
+.input-big {
+    height: 12rem;
+    margin-bottom: auto;
+    font-size: 1.4rem;
+}
+
+.create-new-note-input:focus {
+    outline: none !important;
+}
+
+.create-new-note-submit {
+    text-align: center;
+    align-self: self-start;
+    padding: .5rem 1rem;
+    border: 1px solid cadetblue;
+    border-radius: 5px;
+    color: cadetblue;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.create-new-note-submit:hover {
+    background-color: cadetblue;
+    color: aliceblue;
+}
+
+.overlay-details, .overlay-edit {
+    display: flex;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.details-modal {
+    position: relative;
+    width: 40rem;
+    padding: 3rem;
+    border-radius: 5px;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: cadetblue;
+}
+
+.details-modal-open {
+    transform: scale(1);
+}
+
+.details-modal-close {
+    position: absolute;
+    top: .4rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.details-modal-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.3rem;
+}
+
+.details-modal-project, .details-modal-priority, .details-modal-due, .details-modal-details {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+}
+
+.details-modal-catergory {
+    font-weight: 700;
+}
+
+
+.edit-modal-open {
+    transform: scale(1);
+}
+
+.edit-modal {
+    position: relative;
+    height: 25rem;
+    width: 55rem;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    transition: all .3s;
+}
+
+.edit-modal-close {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.1rem;
+    color: cadetblue;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.edit-modal-close:hover {
+    font-size: 2.5rem;
+}
+
+.edit-modal-entry {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    color: cadetblue;
+}
+
+.edit-modal-input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 1.4rem;
+    resize: none;
+}
+
+.edit-modal-input:focus {
+    outline: none !important;
+}
+
+.edit-modal-input-big {
+    height: 12rem;
+    margin-bottom: auto;
+}
+
+.edit-modal-date {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.edit-modal-date > label {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.edit-modal-date-input {
+    padding: .5rem 1rem;
+    border: 1px solid cadetblue;
+    border-radius: 5px;
+    color: cadetblue;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.edit-modal-priority-submit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-modal-priority {
+    display: flex;
+    align-items: center;
+}
+
+.edit-modal-priority > label {
+    margin-right: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.edit-modal-priority > input {
+    position: relative;
+    opacity: 0;
+    left: 2.2rem;
+}
+
+.btn-red-active {
+    color: aliceblue;
+    background-color: red;
+}
+
+
+.btn-green-active {
+    color: aliceblue;
+    background-color: green;
+}
+
+.btn-yellow-active {
+    color: aliceblue;
+    background-color: orange;
+}
+
+.edit-modal-submit {
+    text-align: center;
+    align-self: center;
+    padding: .5rem 1rem;
+    border: 1px solid cadetblue;
+    border-radius: 5px;
+    color: cadetblue;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.edit-modal-submit:hover {
+    color: aliceblue;
+    background-color: cadetblue;
+}
